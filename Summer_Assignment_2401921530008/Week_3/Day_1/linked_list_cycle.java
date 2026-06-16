@@ -1,27 +1,14 @@
-package live;
-
-import music.Playable;
-import music.string.Veena;
-import music.wind.Saxophone;
-
-public class Test {
-    public static void main(String[] args) {
-
-        // a
-        Veena v = new Veena();
-        v.play();
-
-        // b
-        Saxophone s = new Saxophone();
-        s.play();
-
-        // c
-        Playable p;
-
-        p = v;
-        p.play();
-
-        p = s;
-        p.play();
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        ListNode s = head, f = head;
+        
+        while (f != null && f.next != null) {
+            s = s.next;
+            f = f.next.next;
+            
+            if (s == f) return true;
+        }
+        
+        return false;
     }
 }
